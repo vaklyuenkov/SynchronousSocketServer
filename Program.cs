@@ -14,6 +14,8 @@ class SynchronousSocketServer
     private static string FaviconPath = ConfigurationManager.AppSettings.Get("FaviconPath");
     private static string IndexHtmlPath = ConfigurationManager.AppSettings.Get("IndexHtmlPath");
     private static int Port = Int32.Parse(ConfigurationManager.AppSettings.Get("Port")); 
+    private static int ClientLimit = Int32.Parse(ConfigurationManager.AppSettings.Get("ClientLimit")); 
+    private static int MessageBytesSize = Int32.Parse(ConfigurationManager.AppSettings.Get("MessageBytesSize"));
     private static string LogJournalPath = ConfigurationManager.AppSettings.Get("LogJournalPath");
     private static string GoToRoot = "<h4><a href='http://" + Host + "?adress=" + DefaultDir + "'>Go to Root</a></h4>"; // for "go to root" button - will use several times
     private static string RawHtml = File.ReadAllText(@IndexHtmlPath);// get html code
@@ -29,7 +31,7 @@ class SynchronousSocketServer
             IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, Port);
             Socket sListener = new Socket(ipAddr.AddressFamily, SocketType.Stream, ProtocolType.Tcp);// make lisening socket
             sListener.Bind(ipEndPoint);// bind socket to our endpoint and listen
-            sListener.Listen(10); //set the maximum number of connections waiting to be processed in the queue. 
+            sListener.Listen(ClientLimit); //set the maximum number of connections waiting to be processed in the queue. 
             while (true) // listening loop
             {
                 Console.WriteLine("Waiting for connection at {0}", ipEndPoint);
@@ -38,7 +40,7 @@ class SynchronousSocketServer
                 try // Now, after connection with client, we can send answer about type of error to client
                 {
                     string data = null;
-                    byte[] bytes = new byte[1024];
+                    byte[] bytes = new byte[MessageBytesSize];
                     int bytesRec = handler.Receive(bytes);// get data
                     data += Encoding.UTF8.GetString(bytes, 0, bytesRec);
                     (string address, int Error) = ParseRequest(data); // get parameters from url (address of directory)
