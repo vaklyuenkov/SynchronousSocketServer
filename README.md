@@ -13,4 +13,4 @@ If you will get message `ConfigurationManager can't exist in such context` you s
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0"/>
   </ItemGroup>
 ```
-![](/img/example.png)
+![](/img/example.PNG)
