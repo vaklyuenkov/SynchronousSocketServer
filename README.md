@@ -1,5 +1,5 @@
 # SynchronousSocketServer
-Simple Synchronous Socket Server help to go through dirs and watch size of files.
+Simple Synchronous Socket Server help to go through dirs and watch sizes of files.
 
 Next steps to upgrade server:
 
