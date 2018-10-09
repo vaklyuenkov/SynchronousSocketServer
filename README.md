@@ -13,4 +13,4 @@ If you will get message `ConfigurationManager can't exist in such context` you s
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0"/>
   </ItemGroup>
 ```
-[image1]: //https://ibb.co/gJnag9
+![](//https://ibb.co/gJnag9)
