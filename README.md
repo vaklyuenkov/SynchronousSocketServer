@@ -7,7 +7,8 @@ If you will get message `ConfigurationManager can't exist in such context` you s
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0"/>
   </ItemGroup>
 ```
-Next steps to upgrade:
+Next steps to upgrade server:
 
-1. Make server asynchronous
-2. 
+1. Catch more specific exeptions
+2. Make server asynchronous
+ 
