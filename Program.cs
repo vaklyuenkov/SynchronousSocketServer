@@ -6,6 +6,8 @@ using System.IO;
 using System.Net.Sockets;
 using System.Configuration;
 using System.Collections.Specialized;
+using System.Text.RegularExpressions;
+
 
 class SynchronousSocketServer
 {
@@ -13,14 +15,17 @@ class SynchronousSocketServer
     private static string DefaultDir = ConfigurationManager.AppSettings.Get("DefaultDir");
     private static string FaviconPath = ConfigurationManager.AppSettings.Get("FaviconPath");
     private static string IndexHtmlPath = ConfigurationManager.AppSettings.Get("IndexHtmlPath");
+    private static string JsPath = ConfigurationManager.AppSettings.Get("JsPath");
+    private static string CssPath = ConfigurationManager.AppSettings.Get("CssPath");
     private static int Port = Int32.Parse(ConfigurationManager.AppSettings.Get("Port")); 
     private static int ClientLimit = Int32.Parse(ConfigurationManager.AppSettings.Get("ClientLimit")); 
     private static int MessageBytesSize = Int32.Parse(ConfigurationManager.AppSettings.Get("MessageBytesSize"));
-    private static string LogJournalPath = ConfigurationManager.AppSettings.Get("LogJournalPath");
     private static string GoToRoot = "<h4><a href='http://" + Host + "?adress=" + DefaultDir + "'>Go to Root</a></h4>"; // for "go to root" button - will use several times
     private static string RawHtml = File.ReadAllText(@IndexHtmlPath);// get html code
     private static string[] HtmlParts = RawHtml.Split(new string[] {"<body>"}, StringSplitOptions.None);// split html to insert content
     private static int ErrorCode = 0;// for tracking errors and get to client corresponding answer
+    private static string Logmsg = "";
+    private static string BackButton = ""; 
     public static void StartListening()
     { 
 
@@ -34,8 +39,9 @@ class SynchronousSocketServer
             sListener.Listen(ClientLimit); //set the maximum number of connections waiting to be processed in the queue. 
             while (true) // listening loop
             {
-                Console.WriteLine("Waiting for connection at {0}", ipEndPoint);
-                Log("Waiting for connection at " + ipEndPoint.ToString());
+                Logmsg = "Waiting for connection at " + ipEndPoint.ToString();
+                Console.WriteLine(Logmsg);
+                LoggingClass.Log(Logmsg);
                 Socket handler = sListener.Accept();// waiting for accept from client and then make socket
                 try // Now, after connection with client, we can send answer about type of error to client
                 {
@@ -44,44 +50,49 @@ class SynchronousSocketServer
                     int bytesRec = handler.Receive(bytes);// get data
                     data += Encoding.UTF8.GetString(bytes, 0, bytesRec);
                     (string address, int Error) = ParseRequest(data); // get parameters from url (address of directory)
+                    BackButton = GetBackButton(address);
                     ErrorCode = Error;
-                    if (address=="/favicon.ico") { SendFavicon(handler); } // there we can send system files like images, css, js if we'll need to
+                    if (address=="/favicon.ico"|| address=="/style.css"|| address=="/scripts.js" ) { SendLocalResoures(handler, address); } // one need to rewrite this method if we will use more resources
                     else
                     {
                         CheckHtml(); // siple check 
                         (FileInfo[] Files, DirectoryInfo[] Dirs)  = GetFilesAndDirs(address); //get lists of dirs and files
-                        SendAnswer(handler, Files, Dirs); // make html and sedt to client
+                        SendAnswer(handler, Files, Dirs, BackButton); // make html and sedt to client
                     }
                 }    
                 catch (System.UnauthorizedAccessException ex)
                 {
                     ErrorCode = 1; // Not enough permissions to access the directory
-                    Console.WriteLine(ex.ToString());
-                    Log("Exeption: " + ex.ToString() + "\n\n");   
+                    Logmsg = "Exeption: " + ex.ToString() + "\n\n";
+                    Console.WriteLine(Logmsg);
+                    LoggingClass.Log(Logmsg);   
                 }
                 catch (System.IO.DirectoryNotFoundException ex)
                 {
                     ErrorCode = 2; // Wrong address, please, check url.
-                    Console.WriteLine(ex.ToString());  
-                    Log("Exeption: " + ex.ToString() + "\n\n");  
+                    Logmsg = "Exeption: " + ex.ToString() + "\n\n";
+                    Console.WriteLine(Logmsg);
+                    LoggingClass.Log(Logmsg); 
                 }    
                 catch (Exception ex)
                 {
                     ErrorCode = 3; // Internal server error
-                    Console.WriteLine(ex.ToString()); 
-                    Log("Exeption: " + ex.ToString() + "\n\n");   
+                    Logmsg = "Exeption: " + ex.ToString() + "\n\n";
+                    Console.WriteLine(Logmsg);
+                    LoggingClass.Log(Logmsg);   
                 }    
-                if (ErrorCode > 0){SendWarnAnswer(handler, ErrorCode);} //make and send html with error message
+                if (ErrorCode > 0){SendWarnAnswer(handler, ErrorCode, BackButton);} //make and send html with error message
                 CloseConnection(handler);
             }
         }
         catch (Exception ex) //TODO: write to log   
         {
-            Console.WriteLine(ex.ToString());
-            Log("Exeption: " + ex.ToString() + "\n\n");
+                Logmsg = "Exeption: " + ex.ToString() + "\n\n";
+                Console.WriteLine(Logmsg);
+                LoggingClass.Log(Logmsg);
         }
     }
-    public static void SendAnswer(Socket handler, FileInfo[] Files, DirectoryInfo[] Dirs)
+    public static void SendAnswer(Socket handler, FileInfo[] Files, DirectoryInfo[] Dirs, string BackButton)
     {  
         string FolderList = "<h3>Folders</h3><ul style='list-style-type:circle'>";
         string FilesList = "<h3>Files</h3><ul style='list-style-type:circle'>";
@@ -99,35 +110,65 @@ class SynchronousSocketServer
         }
         FolderList += "</ul>";
         FilesList += "</ul>";
-        string html = HtmlParts[0] + "<body>"+ GoToRoot + FolderList + FilesList + HtmlParts[1]; //make final html
+        string html = HtmlParts[0] + "<body>"+ GoToRoot + BackButton + FolderList + FilesList + HtmlParts[1]; //make final html
         byte[] msg = Encoding.UTF8.GetBytes(html);
         handler.Send(msg); // send reply to client
+        Logmsg = "Answer was sent to client"+ "\n\n";
+        Console.WriteLine(Logmsg);
+        LoggingClass.Log(Logmsg);
     }
-    public static void SendWarnAnswer(Socket handler, int ErrorCode)
+    public static void SendWarnAnswer(Socket handler, int ErrorCode, string BackButton)
     {  
         string ErrorMessage = ConfigurationManager.AppSettings.Get(ErrorCode.ToString()); // get error message from error dictionary in app.config 
-        string html = HtmlParts[0] + "<body>"+ GoToRoot + "<h2 align='center'>" + ErrorMessage +"</h2>" + HtmlParts[1]; //make final html
+        string html = HtmlParts[0] + "<body>"+ GoToRoot + BackButton + "<h2 align='center'>" + ErrorMessage +"</h2>" + HtmlParts[1]; //make final html
         byte[] msg = Encoding.UTF8.GetBytes(html);
         handler.Send(msg); // send reply to client
     }
-    public static void SendFavicon(Socket handler)
+
+    public static string GetBackButton(string address)
+    {  
+        BackButton = "";
+        if (address != DefaultDir) 
+        {
+            BackButton =  "<h4><a href='http://" + Host + "?adress="+ Regex.Replace(@address, @"[^\\]*\\?$", "") + "'>Back</a></h4>"; //make link to do to upper dir 
+        }
+        return BackButton;
+    }
+    public static void SendLocalResoures(Socket handler, string address)
     {
-        byte[] msg = System.IO.File.ReadAllBytes(@FaviconPath);
+        byte[] msg = { 0x20 };
+        switch (address)
+        {
+          case "/favicon.ico":
+              msg = System.IO.File.ReadAllBytes(@FaviconPath);
+              break;
+          case "/style.css":
+              msg = System.IO.File.ReadAllBytes(@CssPath);
+              break;
+          case "/scripts.js":
+              msg = System.IO.File.ReadAllBytes(@JsPath);
+              break;
+        }     
         handler.Send(msg);
+        Logmsg = "File "+ address +" was sent to client"+ "\n\n";
+        Console.WriteLine(Logmsg);
+        LoggingClass.Log(Logmsg);
     }
     public static void CheckHtml()
     {
         if  (HtmlParts.Length != 2)
         {
-            Console.WriteLine("Wrong html, something wrong with <body> tag");
-            Log("Exeption: Wrong html, something wrong with <body> tag" + "\n\n");
+            Logmsg = "Exeption: Wrong html, something wrong with <body> tag" + "\n\n";
+            Console.WriteLine(Logmsg);
+            LoggingClass.Log(Logmsg);
             throw new Exception();
         }
     }
     public static (string, int) ParseRequest(string data)
     {  
-        Console.Write("REQUEST: " + data + "\n\n");
-        Log("Request: " + data + "\n\n");
+        Logmsg = "REQUEST: " + data + "\n\n";
+        Console.Write(Logmsg);
+        LoggingClass.Log(Logmsg);
         string address = DefaultDir;
         int ErrorCode = 0;
         if (data.Length > 0) //not empty request
@@ -142,8 +183,9 @@ class SynchronousSocketServer
             } 
             string Param = ParamsString.Replace("/?adress=", ""); // get only address
         }
-        Console.Write("ADDRESS: " + address + "\n\n");
-        Log("Parsed address: " + address + "\n\n");
+        Logmsg = "ADDRESS: " + address + "\n\n";
+        Console.Write(Logmsg);
+        LoggingClass.Log(Logmsg);
         return (address, ErrorCode);
     }
     public static (FileInfo[], DirectoryInfo[]) GetFilesAndDirs(string address)
@@ -155,11 +197,23 @@ class SynchronousSocketServer
     }
     public static void CloseConnection(Socket handler)
     {
-        Console.WriteLine("Connection closed.");
-        Log("Connection closed.");
+        Logmsg = "Connection closed.";
+        Console.WriteLine(Logmsg);
+        LoggingClass.Log(Logmsg);
         handler.Shutdown(SocketShutdown.Both);
         handler.Close();
     }
+    public static int Main(String[] args)
+    {  
+        StartListening();  
+        return 0;
+    } 
+}
+
+public static class LoggingClass // All logging methods
+{
+    private static string LogJournalPath = ConfigurationManager.AppSettings.Get("LogJournalPath");
+
     public static void Log(string logMessage) // write messages to log; to optimise we can hold opend tw while server work
     {
         string path = LogJournalPath + "\\" + DateTime.Now.ToString("dd-M-yyyy") +"-Log" + ".txt";
@@ -172,13 +226,8 @@ class SynchronousSocketServer
         tw.WriteLine ("-------------------------------");
         tw.Close();
     }
-
-    public static int Main(String[] args)
-    {  
-        StartListening();  
-        return 0;
-    } 
 }
+
 public static class PrettySizeClass // To show pretty sizes of files
 {
     private const long OneKb = 1024;
