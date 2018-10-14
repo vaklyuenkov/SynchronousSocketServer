@@ -7,8 +7,6 @@ using System.Net.Sockets;
 using System.Configuration;
 using System.Collections.Specialized;
 using System.Text.RegularExpressions;
-
-
 class SynchronousSocketServer
 {
     private static string Host = ConfigurationManager.AppSettings.Get("Host"); // get parameters from app.config
@@ -19,10 +17,10 @@ class SynchronousSocketServer
     private static string JsPath = ConfigurationManager.AppSettings.Get("JsPath");
     private static string CssPath = ConfigurationManager.AppSettings.Get("CssPath");
     private static string BackButtonRegexPattern = ConfigurationManager.AppSettings.Get("BackButtonRegexPattern");
-    private static string server_address = Host+":"+Port;
+    private static string ServerAddress = Host+":"+Port;
     private static int ClientLimit = Int32.Parse(ConfigurationManager.AppSettings.Get("ClientLimit")); 
     private static int MessageBytesSize = Int32.Parse(ConfigurationManager.AppSettings.Get("MessageBytesSize"));
-    private static string GoToRoot = "<h4><a href='http://" + server_address + "?adress=" + DefaultDir + "'>Go to Root</a></h4>"; // for "go to root" button - will use several times
+    private static string GoToRoot = "<h4><a href='http://" + ServerAddress + "?adress=" + DefaultDir + "'>Go to Root</a></h4>"; // for "go to root" button - will use several times
     private static string RawHtml = File.ReadAllText(@IndexHtmlPath);// get html code
     private static string[] HtmlParts = RawHtml.Split(new string[] {"<body>"}, StringSplitOptions.None);// split html to insert content
     private static int ErrorCode = 0;// for tracking errors and get to client corresponding answer
@@ -107,7 +105,7 @@ class SynchronousSocketServer
         }
         foreach(DirectoryInfo dir in Dirs) // make list of folders with links
         {
-            string url = "http://" + server_address + "?adress=" + dir.FullName;
+            string url = "http://" + ServerAddress + "?adress=" + dir.FullName;
             FolderList += "<li>" + "<a href='" + url + "'>" + dir.Name + "</a>" + "</li>" ;
         }
         FolderList += "</ul>";
@@ -132,7 +130,7 @@ class SynchronousSocketServer
         BackButton = "";
         if (address != DefaultDir) 
         {
-            BackButton =  "<h4><a href='http://" + server_address + "?adress="+ Regex.Replace(@address, @BackButtonRegexPattern, "") + "'>Back</a></h4>"; //make link to do to upper dir 
+            BackButton =  "<h4><a href='http://" + ServerAddress + "?adress="+ Regex.Replace(@address, @BackButtonRegexPattern, "") + "'>Back</a></h4>"; //make link to do to upper dir 
         }
         return BackButton;
     }
