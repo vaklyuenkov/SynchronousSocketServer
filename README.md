@@ -7,7 +7,7 @@ Known problems:
 Next steps to upgrade server:
 1. Encode and decode address in url parameters (it’s not good to show the address in them).
 2. Catch more specific exeptions
-2.1 If we haven't enough permission to start liscening with specific socket.
+- If we haven't enough permission to start liscening with specific socket.
 3. Make server asynchronous (in work)
 
 If you will get message `ConfigurationManager can't exist in such context` you should add a Reference to the `System.Configuration assembly` for the project, for me it was solved by adding in `server.csproj`:
