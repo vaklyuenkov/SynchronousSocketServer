@@ -1,6 +1,6 @@
 # SynchronousSocketServer
 Simple Synchronous Socket Server help to go through dirs and watch sizes of files.
-
+![](/img/example.PNG)
 Next steps to upgrade server:
 1. Make server asynchronous (in work)
 2. Catch more specific exeptions
@@ -13,4 +13,4 @@ If you will get message `ConfigurationManager can't exist in such context` you s
   </ItemGroup>
 ```
 
-![](/img/example.PNG)
+
