@@ -105,7 +105,7 @@ class SynchronousSocketServer
         }
         foreach(DirectoryInfo dir in Dirs) // make list of folders with links
         {
-            string url = "http://" + ServerAddress + "?adress=" + dir.FullName;
+            string url = "http://" + ServerAddress + "?adress=" + Uri.EscapeDataString(dir.FullName);
             FolderList += "<li>" + "<a href='" + url + "'>" + dir.Name + "</a>" + "</li>" ;
         }
         FolderList += "</ul>";
