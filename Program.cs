@@ -19,7 +19,7 @@ class SynchronousSocketServer
     private static string BackButtonRegexPattern = ConfigurationManager.AppSettings.Get("BackButtonRegexPattern");
     private static string ServerAddress = Host+":"+Port;
     private static int ClientLimit = Int32.Parse(ConfigurationManager.AppSettings.Get("ClientLimit")); 
-    private static int MessageBytesSize = Int32.Parse(ConfigurationManager.AppSettings.Get("MessageBytesSize"));
+    private static int BufferSize = Int32.Parse(ConfigurationManager.AppSettings.Get("BufferSize"));
     private static string GoToRoot = "<h4><a href='http://" + ServerAddress + "?adress=" + DefaultDir + "'>Go to Root</a></h4>"; // for "go to root" button - will use several times
     private static string RawHtml = File.ReadAllText(@IndexHtmlPath);// get html code
     private static string[] HtmlParts = RawHtml.Split(new string[] {"<body>"}, StringSplitOptions.None);// split html to insert content
@@ -46,7 +46,7 @@ class SynchronousSocketServer
                 try // Now, after connection with client, we can send answer about type of error to client
                 {
                     string data = null;
-                    byte[] bytes = new byte[MessageBytesSize];
+                    byte[] bytes = new byte[BufferSize];
                     int bytesRec = handler.Receive(bytes);// get data
                     data += Encoding.UTF8.GetString(bytes, 0, bytesRec);
                     (string address, int Error) = ParseRequest(data); // get parameters from url (address of directory)

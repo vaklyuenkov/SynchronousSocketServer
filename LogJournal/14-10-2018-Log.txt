@@ -1941,3 +1941,934 @@ Log Entry : 18:50:45 14 октября 2018 г.
   :
   :Waiting for connection at 127.0.0.1:80
 -------------------------------
+
+Log Entry : 19:12:32 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:16:52 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:23 14 октября 2018 г.
+  :
+  :REQUEST: GET /?adress=C:\ HTTP/1.1
+Host: localhost
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: http://localhost/?adress=C:\Program%20Files\
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:23 14 октября 2018 г.
+  :
+  :ADDRESS: C:\
+
+
+-------------------------------
+
+Log Entry : 19:17:23 14 октября 2018 г.
+  :
+  :Answer was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:23 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:23 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:23 14 октября 2018 г.
+  :
+  :REQUEST: GET /style.css HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/css,*/*;q=0.1
+Referer: http://localhost/?adress=C:\
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:23 14 октября 2018 г.
+  :
+  :ADDRESS: /style.css
+
+
+-------------------------------
+
+Log Entry : 19:17:23 14 октября 2018 г.
+  :
+  :File /style.css was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:23 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:23 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:24 14 октября 2018 г.
+  :
+  :REQUEST: GET /scripts.js HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: */*
+Referer: http://localhost/?adress=C:\
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:24 14 октября 2018 г.
+  :
+  :ADDRESS: /scripts.js
+
+
+-------------------------------
+
+Log Entry : 19:17:24 14 октября 2018 г.
+  :
+  :File /scripts.js was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:24 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:24 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:24 14 октября 2018 г.
+  :
+  :REQUEST: GET /favicon.ico HTTP/1.1
+Host: localhost
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Referer: http://localhost/?adress=C:\
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:24 14 октября 2018 г.
+  :
+  :ADDRESS: /favicon.ico
+
+
+-------------------------------
+
+Log Entry : 19:17:24 14 октября 2018 г.
+  :
+  :File /favicon.ico was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:24 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:24 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :REQUEST: GET /?adress=C:\Documents%20and%20Settings HTTP/1.1
+Host: localhost
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: http://localhost/?adress=C:\
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :ADDRESS: C:\Documents and Settings
+
+
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :Exeption: System.UnauthorizedAccessException: Access to the path 'C:\Documents and Settings' is denied.
+   at System.IO.Enumeration.FileSystemEnumerator`1.CreateDirectoryHandle(String path, Boolean ignoreNotFound)
+   at System.IO.Enumeration.FileSystemEnumerator`1..ctor(String directory, EnumerationOptions options)
+   at System.IO.Enumeration.FileSystemEnumerable`1..ctor(String directory, FindTransform transform, EnumerationOptions options)
+   at System.IO.Enumeration.FileSystemEnumerableFactory.FileInfos(String directory, String expression, EnumerationOptions options)
+   at System.IO.DirectoryInfo.InternalEnumerateInfos(String path, String searchPattern, SearchTarget searchTarget, EnumerationOptions options)
+   at System.IO.DirectoryInfo.GetFiles(String searchPattern, EnumerationOptions enumerationOptions)
+   at System.IO.DirectoryInfo.GetFiles(String searchPattern)
+   at SynchronousSocketServer.GetFilesAndDirs(String address) in C:\Users\Vladimir\Documents\с#\server\Program.cs:line 194
+   at SynchronousSocketServer.StartListening() in C:\Users\Vladimir\Documents\с#\server\Program.cs:line 59
+
+
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :REQUEST: GET /style.css HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/css,*/*;q=0.1
+Referer: http://localhost/?adress=C:\Documents%20and%20Settings
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :ADDRESS: /style.css
+
+
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :File /style.css was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :REQUEST: GET /scripts.js HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: */*
+Referer: http://localhost/?adress=C:\Documents%20and%20Settings
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :ADDRESS: /scripts.js
+
+
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :File /scripts.js was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:27 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :REQUEST: GET /?adress=C:\ HTTP/1.1
+Host: localhost
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: http://localhost/?adress=C:\Documents%20and%20Settings
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :ADDRESS: C:\
+
+
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :Answer was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :REQUEST: GET /style.css HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/css,*/*;q=0.1
+Referer: http://localhost/?adress=C:\
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :ADDRESS: /style.css
+
+
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :File /style.css was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :REQUEST: GET /scripts.js HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: */*
+Referer: http://localhost/?adress=C:\
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :ADDRESS: /scripts.js
+
+
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :File /scripts.js was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:30 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:31 14 октября 2018 г.
+  :
+  :REQUEST: GET /?adress=C:\Program%20Files HTTP/1.1
+Host: localhost
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: http://localhost/?adress=C:\
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:31 14 октября 2018 г.
+  :
+  :ADDRESS: C:\Program Files
+
+
+-------------------------------
+
+Log Entry : 19:17:31 14 октября 2018 г.
+  :
+  :Answer was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:31 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:31 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:31 14 октября 2018 г.
+  :
+  :REQUEST: GET /style.css HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/css,*/*;q=0.1
+Referer: http://localhost/?adress=C:\Program%20Files
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:31 14 октября 2018 г.
+  :
+  :ADDRESS: /style.css
+
+
+-------------------------------
+
+Log Entry : 19:17:31 14 октября 2018 г.
+  :
+  :File /style.css was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:31 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:31 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:32 14 октября 2018 г.
+  :
+  :REQUEST: GET /scripts.js HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: */*
+Referer: http://localhost/?adress=C:\Program%20Files
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:32 14 октября 2018 г.
+  :
+  :ADDRESS: /scripts.js
+
+
+-------------------------------
+
+Log Entry : 19:17:32 14 октября 2018 г.
+  :
+  :File /scripts.js was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:32 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:32 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :REQUEST: GET /?adress=C:\Program%20Files\Internet%20Explorer HTTP/1.1
+Host: localhost
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: http://localhost/?adress=C:\Program%20Files
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :ADDRESS: C:\Program Files\Internet Explorer
+
+
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :Answer was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :REQUEST: GET /style.css HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/css,*/*;q=0.1
+Referer: http://localhost/?adress=C:\Program%20Files\Internet%20Explorer
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :ADDRESS: /style.css
+
+
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :File /style.css was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :REQUEST: GET /scripts.js HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: */*
+Referer: http://localhost/?adress=C:\Program%20Files\Internet%20Explorer
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :ADDRESS: /scripts.js
+
+
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :File /scripts.js was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:33 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :REQUEST: GET /?adress=C:\Program%20Files\Internet%20Explorer\en-US HTTP/1.1
+Host: localhost
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: http://localhost/?adress=C:\Program%20Files\Internet%20Explorer
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :ADDRESS: C:\Program Files\Internet Explorer\en-US
+
+
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :Answer was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :REQUEST: GET /style.css HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/css,*/*;q=0.1
+Referer: http://localhost/?adress=C:\Program%20Files\Internet%20Explorer\en-US
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :ADDRESS: /style.css
+
+
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :File /style.css was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :REQUEST: GET /scripts.js HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: */*
+Referer: http://localhost/?adress=C:\Program%20Files\Internet%20Explorer\en-US
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :ADDRESS: /scripts.js
+
+
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :File /scripts.js was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:36 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :REQUEST: GET /?adress=C:\ HTTP/1.1
+Host: localhost
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: http://localhost/?adress=C:\Program%20Files\Internet%20Explorer\en-US
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :ADDRESS: C:\
+
+
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :Answer was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :REQUEST: GET /style.css HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: text/css,*/*;q=0.1
+Referer: http://localhost/?adress=C:\
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :ADDRESS: /style.css
+
+
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :File /style.css was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :REQUEST: GET /scripts.js HTTP/1.1
+Host: localhost
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+Accept: */*
+Referer: http://localhost/?adress=C:\
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _xsrf=2|2401b322|b74a796a6775742e137934bdfa2b8e0c|1538297297; username-localhost-8888="2|1:0|10:1539446006|23:username-localhost-8888|44:MTM5ODY5YWMwMDMyNDAwOTgyNTdlODA4ODY1OWQ5ODc=|b302ddceb63dbd941797ac99b8d05a63b020811c814123120aa622f55117e801"
+
+
+
+
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :ADDRESS: /scripts.js
+
+
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :File /scripts.js was sent to client
+
+
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :Connection closed.
+-------------------------------
+
+Log Entry : 19:17:43 14 октября 2018 г.
+  :
+  :Waiting for connection at 127.0.0.1:80
+-------------------------------
