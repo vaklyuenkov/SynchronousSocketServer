@@ -4,23 +4,21 @@ using System.Text;
 using System.Net;
 using System.IO;
 using System.Net.Sockets;
-using System.Configuration;
-using System.Collections.Specialized;
+using System.Collections.Generic;  
 using System.Text.RegularExpressions;
 class SynchronousSocketServer
 {
-    private static string Host = ConfigurationManager.AppSettings.Get("Host"); 
-    private static int Port = Int32.Parse(ConfigurationManager.AppSettings.Get("Port")); 
-    private static string DefaultDir = ConfigurationManager.AppSettings.Get("DefaultDir");
-    private static string FaviconPath = ConfigurationManager.AppSettings.Get("FaviconPath");
-    private static string IndexHtmlPath = ConfigurationManager.AppSettings.Get("IndexHtmlPath");
-    private static string JsPath = ConfigurationManager.AppSettings.Get("JsPath");
-    private static string CssPath = ConfigurationManager.AppSettings.Get("CssPath");
-    private static string BackButtonRegexPattern = ConfigurationManager.AppSettings.Get("BackButtonRegexPattern");
+    private static string Host = "localhost"; 
+    private static int Port = 80; 
+    private static string DefaultDir = "C:\\";
+    private static string FaviconPath = "img\\favicon.ico";
+    private static string IndexHtmlPath = "html\\index.html";
+    private static string JsPath = "js\\script.js";
+    private static string CssPath = "css\\style.css";
+    private static string BackButtonRegexPattern = "[^\\\\]*\\\\?$";
     private static string ServerAddress = Host+":"+Port;
-    private static int ClientLimit = Int32.Parse(ConfigurationManager.AppSettings.Get("ClientLimit")); 
-    
-    private static int BufferSize = Int32.Parse(ConfigurationManager.AppSettings.Get("BufferSize"));
+    private static int ClientLimit = 10; 
+    private static int BufferSize = 1024;
     private static string GoToRoot = "<h4><a href='http://" + ServerAddress + "?adress=" + DefaultDir + "'>Go to Root</a></h4>"; // for "go to root" button - will use several times
     private static string RawHtml = File.ReadAllText(@IndexHtmlPath);
     private static string[] HtmlParts = RawHtml.Split(new string[] {"<body>"}, StringSplitOptions.None);// split html to insert content later 
@@ -29,6 +27,13 @@ class SynchronousSocketServer
     private static string BackButton = ""; 
     private static string StatusCode200 = "HTTP/1.1 200 OK \n\n";
     private static string EndOfRequestPattern = "\n+"; 
+    public static Dictionary <int, string> ErrCodes = new Dictionary<int, string>(3)
+    {
+        {1, "Not enough permissions to access the directory"},
+        {2, "Wrong address, please, check url."},
+        {3, "Internal server error"}
+    };
+ 
     public static void StartListening()
     { 
         try 
@@ -72,21 +77,21 @@ class SynchronousSocketServer
                 }    
                 catch (System.UnauthorizedAccessException ex)
                 {
-                    ErrorCode = 1; // Not enough permissions to access the directory
+                    ErrorCode = 1; 
                     Logmsg = "Exeption: " + ex.ToString() + "\n\n";
                     Console.WriteLine(Logmsg);
                     LoggingClass.Log(Logmsg);   
                 }
                 catch (System.IO.DirectoryNotFoundException ex)
                 {
-                    ErrorCode = 2; // Wrong address, please, check url.
+                    ErrorCode = 2; 
                     Logmsg = "Exeption: " + ex.ToString() + "\n\n";
                     Console.WriteLine(Logmsg);
                     LoggingClass.Log(Logmsg); 
                 }    
                 catch (Exception ex)
                 {
-                    ErrorCode = 3; // unknown exeption - Internal server error
+                    ErrorCode = 3; //there we can also just answer with 500 code. 
                     Logmsg = "Exeption: " + ex.ToString() + "\n\n";
                     Console.WriteLine(Logmsg);
                     LoggingClass.Log(Logmsg);   
@@ -130,7 +135,7 @@ class SynchronousSocketServer
     }
     public static void SendWarnAnswer(Socket handler, int ErrorCode, string BackButton)
     {  
-        string ErrorMessage = ConfigurationManager.AppSettings.Get(ErrorCode.ToString()); // get error message from error dictionary in app.config 
+        string ErrorMessage = ErrCodes[ErrorCode]; // get error message from error dictionary
         string html = StatusCode200 + HtmlParts[0] + "<body>"+ GoToRoot + BackButton + "<h2 align='center'>" + ErrorMessage +"</h2>" + HtmlParts[1]; //make final html
         byte[] msg = Encoding.UTF8.GetBytes(html);
         handler.Send(msg); 

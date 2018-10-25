@@ -1,10 +1,8 @@
 using System;
 using System.IO;
-using System.Configuration;
-using System.Collections.Specialized;
 public static class LoggingClass 
 {
-    private static string LogJournalPath = ConfigurationManager.AppSettings.Get("LogJournalPath");
+    private static string LogJournalPath = "LogJournal";
 
     public static void Log(string logMessage) 
     {
