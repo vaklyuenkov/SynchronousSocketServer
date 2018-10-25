@@ -31,7 +31,6 @@ class SynchronousSocketServer
     private static string EndOfRequestPattern = "\n+"; 
     public static void StartListening()
     { 
-
         try 
         {
             IPHostEntry ipHost = Dns.GetHostEntry(Host);
