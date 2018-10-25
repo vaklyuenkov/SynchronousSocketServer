@@ -19,6 +19,7 @@ class SynchronousSocketServer
     private static string BackButtonRegexPattern = ConfigurationManager.AppSettings.Get("BackButtonRegexPattern");
     private static string ServerAddress = Host+":"+Port;
     private static int ClientLimit = Int32.Parse(ConfigurationManager.AppSettings.Get("ClientLimit")); 
+    
     private static int BufferSize = Int32.Parse(ConfigurationManager.AppSettings.Get("BufferSize"));
     private static string GoToRoot = "<h4><a href='http://" + ServerAddress + "?adress=" + DefaultDir + "'>Go to Root</a></h4>"; // for "go to root" button - will use several times
     private static string RawHtml = File.ReadAllText(@IndexHtmlPath);
@@ -27,6 +28,7 @@ class SynchronousSocketServer
     private static string Logmsg = "";
     private static string BackButton = ""; 
     private static string StatusCode200 = "HTTP/1.1 200 OK \n\n";
+    private static string EndOfRequestPattern = "\n+"; 
     public static void StartListening()
     { 
 
@@ -48,8 +50,16 @@ class SynchronousSocketServer
                 {
                     string data = null;
                     byte[] bytes = new byte[BufferSize];
-                    int bytesRec = handler.Receive(bytes);
-                    data += Encoding.UTF8.GetString(bytes, 0, bytesRec);
+                    while (true) 
+                    {  
+                        Console.WriteLine("reading");
+                        int bytesRec = handler.Receive(bytes);  
+                        data += Encoding.ASCII.GetString(bytes,0,bytesRec);  
+                        if (Regex.IsMatch(@data, @EndOfRequestPattern)) 
+                        {  
+                            break;  
+                        }
+                    } 
                     (string address, int Error) = ParseRequest(data); 
                     BackButton = GetBackButton(address);
                     ErrorCode = Error;
@@ -113,7 +123,6 @@ class SynchronousSocketServer
         FolderList += "</ul>";
         FilesList += "</ul>";
         html += HtmlParts[0] + "<body>"+ GoToRoot + BackButton + FolderList + FilesList + HtmlParts[1]; //make final html
-        Console.WriteLine(html);
         byte[] msg = Encoding.UTF8.GetBytes(html);
         handler.Send(msg); 
         Logmsg = "Answer was sent to client"+ "\n\n";
