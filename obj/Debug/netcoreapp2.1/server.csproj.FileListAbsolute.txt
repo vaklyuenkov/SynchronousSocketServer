@@ -9,4 +9,3 @@ C:\Users\Vladimir\Documents\с#\server\obj\Debug\netcoreapp2.1\server.AssemblyIn
 C:\Users\Vladimir\Documents\с#\server\obj\Debug\netcoreapp2.1\server.AssemblyInfo.cs
 C:\Users\Vladimir\Documents\с#\server\obj\Debug\netcoreapp2.1\server.dll
 C:\Users\Vladimir\Documents\с#\server\obj\Debug\netcoreapp2.1\server.pdb
-C:\Users\Vladimir\Documents\с#\server\bin\Debug\netcoreapp2.1\server.dll.config
