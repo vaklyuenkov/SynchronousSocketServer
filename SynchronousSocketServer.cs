@@ -59,12 +59,15 @@ class SynchronousSocketServer
                 {
                     string data = null;
                     byte[] bytes = new byte[BufferSize];
-                    while (true) 
+                    while (handler.Connected) 
                     {  
-                        Console.WriteLine("\n reading \n");
-                        int bytesRec = handler.Receive(bytes);  
+                        int bytesRec = handler.Receive(bytes);
+                        //Enable this for debug  
+                        //Logmsg = "Reading " + bytesRec + " bytes \n\n";
+                        //Console.WriteLine(Logmsg);
+                        //LoggingClass.Log(Logmsg);   
                         data += Encoding.ASCII.GetString(bytes,0,bytesRec);
-                        if (Regex.IsMatch(@data, @EndOfRequestPattern)) 
+                        if (Regex.IsMatch(@data, @EndOfRequestPattern) || bytesRec < 1) 
                         {  
                             break;  
                         }
